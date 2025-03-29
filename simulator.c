@@ -9,9 +9,9 @@ int compare_arrival(const void *a, const void *b) {
     int arrivalB = ((int*)b)[1];
 
     if (arrivalA == arrivalB) {
-        return ((int*)a)[0] - ((int*)b)[0]; // PID'ye göre sıralama
+        return ((int*)a)[0] - ((int*)b)[0]; // Sort by PID
     }
-    return arrivalA - arrivalB; // Arrival time'a göre sıralama
+    return arrivalA - arrivalB; // Sort by Arrival Time
 }
 
 void read_processes(const char *filename, int processes[MAX_PROCESSES][4], int *n) {
@@ -47,7 +47,7 @@ void fcfs(int processes[MAX_PROCESSES][4], int n) {
         if (time < processes[i][1]) {
             time = processes[i][1]; // Fill idle time
         }
-        time += processes[i][3]; // Burst time kadar ilerle
+        time += processes[i][3]; // Move forward in time by the burst time
         completion_times[i] = time;
 
         turnaround_time = completion_times[i] - processes[i][1];
