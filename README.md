@@ -34,4 +34,4 @@ Output Format
 
   
 Bonus 
-  • Using a Makefile build (+5 points)
+  • Using a Makefile build 
